@@ -4,10 +4,14 @@ import numpy as np
 import pandas as pd
 import firebase_admin
 from firebase_admin import credentials, firestore
+from flask_cors import CORS  # Importa CORS
 
 
 # Inicializar la aplicacion Flask
 app = Flask(__name__)
+
+# Habilita CORS para todas las rutas
+CORS(app)
 
 #Configurar las credenciales a partir del archivo JSON
 cred = credentials.Certificate('fir-app-2bfcb-firebase-adminsdk-66op5-592e0b8a2b.json')  # Reemplaza con la ruta de tu archivo
